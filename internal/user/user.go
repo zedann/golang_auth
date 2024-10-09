@@ -1,6 +1,10 @@
 package user
 
-import "context"
+import (
+	"context"
+
+	"github.com/gin-gonic/gin"
+)
 
 type User struct {
 	ID       int64  `json:"id"`
@@ -28,5 +32,5 @@ type UserService interface {
 }
 
 type UserHandler interface {
-	UserService
+	CreateUser(c *gin.Context)
 }
